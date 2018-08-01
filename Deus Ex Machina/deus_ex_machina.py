@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 from numpy import array
 import random
-from threading import Thread
 
 class DeusExMachina():
     """
