@@ -76,7 +76,6 @@ class DeusExMachina():
 
 print('Welcome to DeusExMachina!')    
 machine = DeusExMachina()
-threads = []
 while True:
     print('\nCurrent sate of DeusExMachina is:'+machine.getCurrentState())
     newinput = input('Please give the proper input: ')
@@ -84,10 +83,4 @@ while True:
         machine.setCurrentState('stop')
         break
     else:
-        thread = Thread(target=machine.setCurrentState, args=(newinput,))
-        threads += [thread]
-        thread.start()
-
-for x in threads:
-    x.join()
-        
+        machine.setCurrentState(newinput)
